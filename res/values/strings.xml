@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Lottery!</string>
+    <string name="app_name">抽奖</string>
+    <string name="choujiang">抽奖</string>
+    <string name="duijiang">兑奖</string>
+    <string name="no_chance">今天已经木有机会了！</string>
+    <string name="total_prize">获奖总金额：%s</string>
+    <string name="today_chance">今日剩余抽奖次数：%s</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    
+    <!-- 兑奖界面 -->
+    <string name="get_money">兑换</string>
+    <string name="no_enough_money">余额不足！！！</string>
+    <string name="time_error">别作弊哦！！！</string>
+    <string name="input_money_hint">输入想要兑奖的金额</string>
+    
+    <string name="change_background">更换背景</string>
+    <string name="cancel_background">取消背景</string>
+    <string name="error_to_open_gallery">打开图库失败。</string>
+    <string name="error_to_save_pic">图片保存失败。</string>
+    <string name="error_to_set_background">背景设置失败。</string>
+    <string name="lotter_history">抽奖记录</string>
+    <string name="history_item_roll">随机点数：%s</string>
+    <string name="history_item_get_money">兑现</string>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/translucent_background" >
+
+        <TextView
+            android:id="@+id/total_prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/today_chance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+	<View
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"></View>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/choujiang"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choujiang" />
+
+        <Button
+            android:id="@+id/duijiang"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/duijiang" />
+    </LinearLayout>
+
+</LinearLayout>
