@@ -7,22 +7,21 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" >
-        <ImageView
+        android:layout_width="320dp"
+        android:layout_height="190dp" >
+
+        <ImageView
             android:id="@+id/first_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:scaleType="centerInside"
             android:src="@anim/num_anim" />
-        <ImageView
+
+        <ImageView
             android:id="@+id/second_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:scaleType="centerInside"
             android:src="@anim/num_anim_2" />
 
     </LinearLayout>
@@ -31,6 +30,7 @@
         android:id="@+id/button1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
         android:text="@string/start"
         android:layout_gravity="center_horizontal" />
 
