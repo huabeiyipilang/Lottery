@@ -27,7 +27,6 @@ public class GetMoney extends Activity implements OnClickListener {
 		mGetMoney.setOnClickListener(this);
 	}
 
-	@Override
 	public void onClick(View v) {
 		if(mMoneyNumber == null){
 			return;

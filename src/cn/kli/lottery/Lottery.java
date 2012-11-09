@@ -24,6 +24,7 @@ import android.widget.Toast;
 public class Lottery extends Activity implements OnClickListener {
 	private Button mChouJiang;
 	private Button mDuiJiang;
+	private Button mDianCan;
 	private TextView mTotalPrize;
 	private TextView mTodayChance;
 	private Global mGlobal;
@@ -44,11 +45,13 @@ public class Lottery extends Activity implements OnClickListener {
     	
         mDuiJiang = (Button)findViewById(R.id.duijiang);
         mChouJiang = (Button)findViewById(R.id.choujiang);
+        mDianCan = (Button)findViewById(R.id.diancan);
         mTotalPrize = (TextView)findViewById(R.id.total_prize);
         mTodayChance = (TextView)findViewById(R.id.today_chance);
         mMainLayout = (LinearLayout)findViewById(R.id.main_layout);
         mChouJiang.setOnClickListener(this);
         mDuiJiang.setOnClickListener(this);
+        mDianCan.setOnClickListener(this);
     }
     
     
@@ -79,7 +82,6 @@ public class Lottery extends Activity implements OnClickListener {
     
 	
 	
-	@Override
 	public void onClick(View arg0) {
 		switch(arg0.getId()){
 		case R.id.choujiang:
@@ -87,18 +89,23 @@ public class Lottery extends Activity implements OnClickListener {
 				Toast.makeText(this, R.string.no_chance, Toast.LENGTH_SHORT).show();
 				return;
 			}
-			Intent intent = new Intent();
-			intent.setClass(this, RandomNumberLottery.class);
-			this.startActivity(intent);
+			gotoActivity(RandomNumberLottery.class);
 			break;
 		case R.id.duijiang:
-			Intent intent1 = new Intent();
-			intent1.setClass(this, GetMoney.class);
-			this.startActivity(intent1);
+			gotoActivity(GetMoney.class);
+			break;
+			
+		case R.id.diancan:
+			gotoActivity(cn.kli.lottery.diancan.SlideShowActivity.class);
 			break;
 		}
 	}
 
+	private void gotoActivity(Class cls){
+		Intent intent = new Intent();
+		intent.setClass(this, cls);
+		this.startActivity(intent);
+	}
 	
 	
 	@Override

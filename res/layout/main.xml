@@ -44,6 +44,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/duijiang" />
+        
+        <Button
+            android:id="@+id/diancan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/diancan" />
     </LinearLayout>
 
 </LinearLayout>

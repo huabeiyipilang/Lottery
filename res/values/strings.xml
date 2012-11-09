@@ -25,5 +25,11 @@
     <string name="lotter_history">抽奖记录</string>
     <string name="history_item_roll">随机点数：%s</string>
     <string name="history_item_get_money">兑现</string>
+    
+    <string name="diancan">点餐</string>
+    <string name="no_sdcard">请插入SD卡</string>
+    <string name="save_error">保存失败</string> 
+  	<string name="save_to_sd">图片已保存：%s</string>
+    
 
 </resources>

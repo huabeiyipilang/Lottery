@@ -53,7 +53,6 @@ public class RandomNumberLottery extends Activity implements OnClickListener{
 		anim2.selectDrawable(9);
 	}
 	
-	@Override
 	public void onClick(View arg0) {
 		if(anim1.isRunning()){
 			mStartBtn.setText(R.string.start);

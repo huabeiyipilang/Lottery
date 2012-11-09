@@ -22,6 +22,8 @@
         <activity android:name="GetMoney"></activity>
         <activity android:name="LotteryHistory"
             android:label="@string/lotter_history"></activity>
+        <activity android:name=".diancan.SlideShowActivity"></activity>
+        <activity android:name=".diancan.MealMenu"></activity>
     </application>
 
 </manifest>
