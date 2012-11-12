@@ -113,5 +113,9 @@ public class SlideShowActivity extends Activity {
 		String newName = origin.substring(lastPoint);
 		return System.currentTimeMillis() + newName;
 	}
+	
+	public DishList testDishList(){
+		return new DishList(this);
+	}
 
 }

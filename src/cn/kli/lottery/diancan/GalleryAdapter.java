@@ -16,16 +16,16 @@ import android.widget.Gallery.LayoutParams;
 
 public class GalleryAdapter extends BaseAdapter {
 	private Context mContext;
-	private ArrayList<String> mImageList;
+	private DishList mDishList;
 	private int mCurrentPosition;
 	
 	public GalleryAdapter(Context context){
 		mContext = context;
-		mImageList = getImageList();
+		mDishList = getImageList();
 	}
 
 	public int getCount() {
-		return mImageList.size();
+		return mDishList.size();
 	}
 
 	public Object getItem(int arg0) {
@@ -41,9 +41,13 @@ public class GalleryAdapter extends BaseAdapter {
 	}
 	
 	public String getCurrentPicName(){
-		return mImageList.get(mCurrentPosition).toString();
+		return mDishList.get(mCurrentPosition).d_pic;
 	}
 	
+	private DishList getImageList(){
+		return new DishList(mContext);
+	}
+	/* use DishList instead
 	private ArrayList<String> getImageList(){
 		AssetManager am = mContext.getResources().getAssets();
 		ArrayList<String> list = new ArrayList<String>();
@@ -60,7 +64,7 @@ public class GalleryAdapter extends BaseAdapter {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 	
 	private boolean picFilter(String fileName){
 		String[] types = {".jpg", ".png"};
@@ -79,9 +83,9 @@ public class GalleryAdapter extends BaseAdapter {
 		InputStream input = null;
 		AssetManager am = mContext.getResources().getAssets();
 		try {
-			input = am.open(mImageList.get(pos).toString());
+			input = am.open(mDishList.get(pos).d_pic);
 			Bitmap bm = BitmapFactory.decodeStream(input);
-			Log.i("klilog","load file = "+mImageList.get(pos).toString());
+			Log.i("klilog","load file = "+mDishList.get(pos).d_pic);
 			image.setImageBitmap(bm);
 		} catch (IOException e) {
 			e.printStackTrace();

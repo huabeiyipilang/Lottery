@@ -24,6 +24,7 @@
             android:label="@string/lotter_history"></activity>
         <activity android:name=".diancan.SlideShowActivity"></activity>
         <activity android:name=".diancan.MealMenu"></activity>
+        <activity android:name="TestActivity"></activity>
     </application>
 
 </manifest>
