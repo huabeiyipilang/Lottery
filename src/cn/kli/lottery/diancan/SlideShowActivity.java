@@ -5,8 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import cn.kli.lottery.R;
+import cn.kli.lottery.diancan.DishMenu.Dish;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -23,6 +25,7 @@ public class SlideShowActivity extends Activity {
 	private LinearLayout mImageContainer;
 	private GalleryView mGallery;
 	private GalleryAdapter mAdapter;
+	private ArrayList<Dish> mDishList = new ArrayList<Dish>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class SlideShowActivity extends Activity {
 		findViewById(R.id.button1).setOnClickListener(new OnClickListener(){
 
 			public void onClick(View arg0) {
-				saveAssetPic2Sd(mAdapter.getCurrentPicName());
+				mAdapter.selectCurrentDish();
 			}
 			
 		});
@@ -114,8 +117,8 @@ public class SlideShowActivity extends Activity {
 		return System.currentTimeMillis() + newName;
 	}
 	
-	public DishList testDishList(){
-		return new DishList(this);
+	public DishMenu testDishList(){
+		return new DishMenu(this);
 	}
 
 }

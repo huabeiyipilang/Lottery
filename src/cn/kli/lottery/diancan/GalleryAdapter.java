@@ -2,7 +2,6 @@ package cn.kli.lottery.diancan;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -10,13 +9,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Gallery.LayoutParams;
 
 public class GalleryAdapter extends BaseAdapter {
 	private Context mContext;
-	private DishList mDishList;
+	private DishMenu mDishList;
 	private int mCurrentPosition;
 	
 	public GalleryAdapter(Context context){
@@ -40,12 +41,24 @@ public class GalleryAdapter extends BaseAdapter {
 		return getImageView(arg0);
 	}
 	
-	public String getCurrentPicName(){
-		return mDishList.get(mCurrentPosition).d_pic;
+	public void selectCurrentDish(){
+		mDishList.get(mCurrentPosition).select();
+		this.notifyDataSetChanged();
 	}
 	
-	private DishList getImageList(){
-		return new DishList(mContext);
+	/*
+	public Dish getAndRemoveCurrentDish(){
+		Dish dish = mDishList.get(mCurrentPosition);
+		if(dish == null){
+			return null;
+		}
+		mDishList.remove(dish);
+		this.notifyDataSetChanged();
+		return dish;
+	}*/
+	
+	private DishMenu getImageList(){
+		return new DishMenu(mContext);
 	}
 	/* use DishList instead
 	private ArrayList<String> getImageList(){
@@ -79,14 +92,35 @@ public class GalleryAdapter extends BaseAdapter {
 	
 	private GalleryItemView getImageView(int pos){
 		mCurrentPosition = pos;
-		GalleryItemView image = new GalleryItemView(mContext);
+		GalleryItemView view = new GalleryItemView(mContext);
+		/*
+		view.setOnClickListener(new OnClickListener(){
+
+			public void onClick(View arg0) {
+			}
+			
+		});
+		view.setOnLongClickListener(new OnLongClickListener(){
+
+			public boolean onLongClick(View arg0) {
+				selectCurrentDish();
+				return true;
+			}
+			
+		});*/
 		InputStream input = null;
 		AssetManager am = mContext.getResources().getAssets();
 		try {
 			input = am.open(mDishList.get(pos).d_pic);
 			Bitmap bm = BitmapFactory.decodeStream(input);
 			Log.i("klilog","load file = "+mDishList.get(pos).d_pic);
-			image.setImageBitmap(bm);
+			view.setImageBitmap(bm);
+			String tag = mDishList.get(pos).d_name;
+			if(mDishList.get(pos).d_selected){
+				tag += "  selected";
+			}
+			view.setTag(tag);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally{
@@ -99,8 +133,8 @@ public class GalleryAdapter extends BaseAdapter {
 				e.printStackTrace();
 			}
 		}
-		image.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-		return image;
+		view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		return view;
 	}
 	
 }

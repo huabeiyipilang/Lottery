@@ -3,7 +3,7 @@ package cn.kli.lottery;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-import cn.kli.lottery.diancan.DishList;
+import cn.kli.lottery.diancan.DishMenu;
 
 public class TestActivity extends Activity {
 	private TextView display;
@@ -13,7 +13,7 @@ public class TestActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.test);
 	    display = (TextView)findViewById(R.id.test_display);
-	    DishList list = new DishList(this);
+	    DishMenu list = new DishMenu(this);
 	    list.update();
 	}
 

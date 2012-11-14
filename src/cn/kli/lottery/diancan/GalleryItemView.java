@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class GalleryItemView extends LinearLayout {
 
 	private Context mContext;
 	private ImageView mImage;
+	private TextView mTag;
 	
 	public GalleryItemView(Context context) {
 		super(context);
@@ -31,6 +33,11 @@ public class GalleryItemView extends LinearLayout {
 		LayoutInflater inflater = LayoutInflater.from(mContext);
 		View view = inflater.inflate(R.layout.gallery_item, this);
 		mImage = (ImageView)view.findViewById(R.id.gallery_item_img);
+		mTag = (TextView)view.findViewById(R.id.dish_name);
+	}
+	
+	public void setTag(String tag){
+		mTag.setText(tag);
 	}
 	
 	public void setImageBitmap(Bitmap bitmap){
