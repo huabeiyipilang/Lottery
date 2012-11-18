@@ -2,6 +2,7 @@ package cn.kli.lottery.diancan;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -44,6 +45,10 @@ public class GalleryAdapter extends BaseAdapter {
 	public void selectCurrentDish(){
 		mDishList.get(mCurrentPosition).select();
 		this.notifyDataSetChanged();
+	}
+	
+	public ArrayList<Dish> getSelectedList(){
+		return mDishList.getSelectedDishList();
 	}
 	
 	/*
@@ -116,7 +121,7 @@ public class GalleryAdapter extends BaseAdapter {
 			Log.i("klilog","load file = "+mDishList.get(pos).d_pic);
 			view.setImageBitmap(bm);
 			String tag = mDishList.get(pos).d_name;
-			if(mDishList.get(pos).d_selected){
+			if(mDishList.get(pos).isSelected()){
 				tag += "  selected";
 			}
 			view.setTag(tag);

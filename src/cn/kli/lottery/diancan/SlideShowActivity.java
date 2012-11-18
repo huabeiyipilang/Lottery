@@ -7,17 +7,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import cn.kli.lottery.R;
-import cn.kli.lottery.diancan.DishMenu.Dish;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import cn.kli.lottery.R;
 
 public class SlideShowActivity extends Activity {
 	
@@ -38,11 +39,23 @@ public class SlideShowActivity extends Activity {
 		mGallery = (GalleryView)findViewById(R.id.gallery1);
 		mGallery.setAdapter(mAdapter);
 		mGallery.setSpacing(40);
+		mGallery.setOnItemClickListener(new OnItemClickListener(){
+
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				mAdapter.selectCurrentDish();
+			}
+			
+		});
 		
-		findViewById(R.id.button1).setOnClickListener(new OnClickListener(){
+		findViewById(R.id.commit).setOnClickListener(new OnClickListener(){
 
 			public void onClick(View arg0) {
-				mAdapter.selectCurrentDish();
+				Intent intent = new Intent(SlideShowActivity.this, OrderForm.class);
+				Bundle bundle = new Bundle();
+				bundle.putParcelableArrayList("dishes", mAdapter.getSelectedList());
+				intent.putExtra("Bundle", bundle);
+				startActivity(intent);
 			}
 			
 		});

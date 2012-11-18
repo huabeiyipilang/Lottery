@@ -96,8 +96,8 @@ public class Lottery extends Activity implements OnClickListener {
 			break;
 			
 		case R.id.diancan:
-//			gotoActivity(cn.kli.lottery.diancan.SlideShowActivity.class);
-			gotoActivity(cn.kli.lottery.diancan.OrderForm.class);
+			gotoActivity(cn.kli.lottery.diancan.SlideShowActivity.class);
+//			gotoActivity(cn.kli.lottery.diancan.OrderForm.class);
 			break;
 		}
 	}

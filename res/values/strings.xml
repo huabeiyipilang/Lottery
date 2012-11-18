@@ -31,7 +31,12 @@
     <string name="save_error">保存失败</string> 
   	<string name="save_to_sd">图片已保存：%s</string>
     
+  	<string name="order_form">订单</string>
+  	<string name="order_form_dishes">菜：%s</string>
+  	<string name="order_form_rice">饭：米饭</string>
+  	<string name="order_form_date">日期：%s</string>
   	<string name="order_form_postscript">备注</string>
   	<string name="order_form_send">发送</string>
+  	<string name="commit">提交</string>
 
 </resources>

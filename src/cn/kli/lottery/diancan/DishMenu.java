@@ -15,6 +15,8 @@ import org.xml.sax.SAXException;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class DishMenu{
 	private Context mContext;
@@ -23,21 +25,6 @@ public class DishMenu{
 	private final static String DISH_TAG = "dish";
 	private final static String DISH_NAME = "name";
 	private final static String DISH_PIC= "pic";
-	
-	public class Dish{
-		String d_name;
-		String d_pic;
-		boolean d_selected;
-		public Dish(String name, String pic){
-			d_name = name;
-			d_pic = pic;
-			d_selected = false;
-		}
-		
-		public void select(){
-			d_selected = !d_selected;
-		}
-	}
 	
 	public DishMenu() {
 		
@@ -95,10 +82,10 @@ public class DishMenu{
 		return null;
 	}
 	
-	public ArrayList<Dish> getSelectDishList(){
+	public ArrayList<Dish> getSelectedDishList(){
 		ArrayList<Dish> list = new ArrayList<Dish>();
 		for(Dish dish:mDishMenu){
-			if(dish.d_selected){
+			if(dish.isSelected()){
 				list.add(dish);
 			}
 		}
