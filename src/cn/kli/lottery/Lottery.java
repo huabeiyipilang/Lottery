@@ -21,7 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.SendMessageToWX;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.mm.sdk.openapi.WXMediaMessage;
+import com.tencent.mm.sdk.openapi.WXTextObject;
+
 public class Lottery extends Activity implements OnClickListener {
+	//views
 	private Button mChouJiang;
 	private Button mDuiJiang;
 	private Button mDianCan;
@@ -29,6 +36,9 @@ public class Lottery extends Activity implements OnClickListener {
 	private TextView mTodayChance;
 	private Global mGlobal;
 	private LinearLayout mMainLayout;
+	
+	//weixin
+	private IWXAPI mWxApi;
 	
 	private final static int MENU_CHANGE_BACKGROUND = 1;
 	private final static int MENU_CANCEL_BACKGROUND = 2;
@@ -52,6 +62,8 @@ public class Lottery extends Activity implements OnClickListener {
         mChouJiang.setOnClickListener(this);
         mDuiJiang.setOnClickListener(this);
         mDianCan.setOnClickListener(this);
+        
+        registerToWX();
     }
     
     
@@ -70,6 +82,11 @@ public class Lottery extends Activity implements OnClickListener {
         updateDisplay();
 	}
 
+    
+    private void registerToWX(){
+    	mWxApi = WXAPIFactory.createWXAPI(this, Global.WEIXIN_APP_ID, true);
+    	mWxApi.registerApp(Global.WEIXIN_APP_ID);
+    }
     
     
 	private void updateDisplay(){
@@ -97,9 +114,25 @@ public class Lottery extends Activity implements OnClickListener {
 			
 		case R.id.diancan:
 			gotoActivity(cn.kli.lottery.diancan.SlideShowActivity.class);
+//			testForWX();
 //			gotoActivity(cn.kli.lottery.diancan.OrderForm.class);
 			break;
 		}
+	}
+	
+	private void testForWX(){
+		WXTextObject wx_text = new WXTextObject();
+		wx_text.text = "test";
+		
+		WXMediaMessage msg = new WXMediaMessage();
+		msg.mediaObject = wx_text;
+		msg.description = "just for test";
+		
+		SendMessageToWX.Req req = new SendMessageToWX.Req();
+		req.transaction = String.valueOf(System.currentTimeMillis());
+		req.message = msg;
+		
+		mWxApi.sendReq(req);
 	}
 
 	private void gotoActivity(Class cls){

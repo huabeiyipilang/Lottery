@@ -56,6 +56,7 @@ public class SlideShowActivity extends Activity {
 				bundle.putParcelableArrayList("dishes", mAdapter.getSelectedList());
 				intent.putExtra("Bundle", bundle);
 				startActivity(intent);
+				finish();
 			}
 			
 		});

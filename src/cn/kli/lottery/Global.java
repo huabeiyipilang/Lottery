@@ -28,6 +28,9 @@ public class Global {
 	
 	public final static String BACKGROUND_FILE_NAME = "background.jpg";
 	
+	public final static String WEIXIN_APP_ID = "wx590520e176e0455d";
+	public final static String WEIXIN_APP_KEY = "052cfca49d76ff29a7a4353c7437318e";
+	
 	public static int sTotalPrize;
 	public static int sTodayChance;
 	public static long sLastDay;
