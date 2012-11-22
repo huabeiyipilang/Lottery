@@ -2,6 +2,7 @@ package cn.kli.lottery.diancan;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.Gallery;
 
@@ -19,8 +20,12 @@ public class GalleryView extends Gallery {
 	@Override
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 			float velocityY) {
-		// TODO Auto-generated method stub
-		return false;
+		int keycode = KeyEvent.KEYCODE_DPAD_RIGHT;
+		if(e2.getX() > e1.getX()){
+			keycode = KeyEvent.KEYCODE_DPAD_LEFT;
+		}
+		onKeyDown(keycode, null);
+		return true;
 	}
 
 	

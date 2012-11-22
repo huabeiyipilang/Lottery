@@ -1,5 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <dish-list>
-	<dish name="芹菜炒肉" pic="01.png"/>
-	<dish name="韭菜鸡蛋" pic="02.png"/>
+	
+<dish name="芹菜炒肉" pic="qincaichaorou.jpg"/>
+<dish name="韭菜鸡蛋" pic="jiucaijidan.jpg"/>
+<dish name="土豆丝" pic="tudousi.jpg"/>
+<dish name="尖椒肉丝" pic="jianjiaorousi.jpg"/>
+<dish name="菜花炒长腿菇" pic="caihuachaochangtuigu.jpg"/>
+<dish name="排骨炖豆角" pic="paigudundoujiao.jpg"/>
+<dish name="西红柿鸡蛋" pic="xihongshijidan.jpg"/>
+<dish name="西红柿鸡蛋面" pic="xihongshijidanmian.jpg"/>
+<dish name="咖喱牛肉饭" pic="galiniuroufan.jpg"/>
+<dish name="饺子" pic="jiaozi.jpg"/>
+
 </dish-list>
