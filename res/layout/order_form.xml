@@ -8,25 +8,39 @@
         android:id="@+id/order_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
         android:background="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/postscript"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/order_form_postscript"
         android:ems="10"
+        android:hint="@string/order_form_postscript"
         android:inputType="textMultiLine" >
 
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order_form_send" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/order_form_send" />
+
+        <Button
+            android:id="@+id/copy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/copy" />
+    </LinearLayout>
 
 </LinearLayout>
