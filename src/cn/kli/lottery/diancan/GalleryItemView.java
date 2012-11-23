@@ -15,6 +15,7 @@ public class GalleryItemView extends LinearLayout {
 
 	private Context mContext;
 	private ImageView mImage;
+	private ImageView mMark;
 	private TextView mTag;
 	
 	public GalleryItemView(Context context) {
@@ -34,6 +35,7 @@ public class GalleryItemView extends LinearLayout {
 		View view = inflater.inflate(R.layout.gallery_item, this);
 		mImage = (ImageView)view.findViewById(R.id.gallery_item_img);
 		mTag = (TextView)view.findViewById(R.id.dish_name);
+		mMark = (ImageView)view.findViewById(R.id.dish_mark);
 	}
 	
 	public void setTag(String tag){
@@ -46,5 +48,9 @@ public class GalleryItemView extends LinearLayout {
 	
 	public void setImageURI(Uri uri){
 		mImage.setImageURI(uri);
+	}
+	
+	public void mark(boolean mark){
+		mMark.setVisibility(mark ? View.VISIBLE : View.GONE);
 	}
 }

@@ -19,11 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name="RandomNumberLottery"></activity>
-        <activity android:name="GetMoney"></activity>
+        <activity android:name="GetMoney"
+            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
         <activity android:name="LotteryHistory"
             android:label="@string/lotter_history"></activity>
-        <activity android:name=".diancan.SlideShowActivity"></activity>
-        <activity android:name=".diancan.OrderForm"></activity>
+        <activity android:name=".diancan.SlideShowActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".diancan.OrderForm"
+            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
 
 </manifest>

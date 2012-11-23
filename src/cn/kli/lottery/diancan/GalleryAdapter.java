@@ -121,9 +121,7 @@ public class GalleryAdapter extends BaseAdapter {
 			Log.i("klilog","load file = "+mDishList.get(pos).d_pic);
 			view.setImageBitmap(bm);
 			String tag = mDishList.get(pos).d_name;
-			if(mDishList.get(pos).isSelected()){
-				tag += "  selected";
-			}
+			view.mark(mDishList.get(pos).isSelected());
 			view.setTag(tag);
 			
 		} catch (IOException e) {

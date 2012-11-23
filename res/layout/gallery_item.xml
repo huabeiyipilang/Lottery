@@ -18,18 +18,31 @@
             android:id="@+id/dish_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-        	android:background="#ffffff"
-            android:text="test" />
+            android:background="#ffffff"
+            android:text="test"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <ImageView
-            android:id="@+id/gallery_item_img"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_launcher" />
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/gallery_item_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_launcher" />
+            <ImageView
+                android:id="@+id/dish_mark"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/mark_chi"
+                android:visibility="gone" />
+        </FrameLayout>
     </LinearLayout>
 
 </LinearLayout>
-
